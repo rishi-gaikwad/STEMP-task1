@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Form from "./Component/Form";
+import TableData from "./Component/TableData";
+import { Center, Container, Heading, Stack, useColorModeValue } from "@chakra-ui/react";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container spacing={8} mx={'auto'} maxW={'5xl'} py={12} px={6} mt={'10'}>
+        <Stack bg={useColorModeValue('gray.50', 'gray.800')}>
+          <Center h='100px' color='white'>
+            <Heading alignItems={'center'}>Task</Heading>
+          </Center>
+          <Form />
+        </Stack>
+      </Container >
+      <TableData />
+    </>
   );
 }
 
 export default App;
+
